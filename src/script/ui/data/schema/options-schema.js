@@ -86,7 +86,6 @@ const render = {
 	showHydrogenLabels: {
 		title: 'Show hydrogen labels',
 		enum: ['off', 'Hetero', 'Terminal', 'Terminal and Hetero', 'on'],
-		enumNames: ['None', 'Heteoratoms', 'Terminal Atoms', 'Terminal and Heteroatoms', 'All'],
 		default: 'on'
 	},
 	// Bonds
