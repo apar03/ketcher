@@ -3,9 +3,7 @@ Copyright Schrodinger, LLC. All rights reserved.
 """
 
 import csv
-import os
 import requests
-import sys
 import tempfile
 from flask import Flask
 from flask import jsonify, request, render_template
@@ -17,8 +15,6 @@ from functools import partial
 
 app = Flask(__name__)
 CORS(app)
-
-sys.path.insert(0, "/software/lib/Darwin-x86_64/rdkit-Release_2018_03_2/lib/python3.6/site-packages/")
 
 
 def runOnMolecule(function):
