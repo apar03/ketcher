@@ -39,7 +39,7 @@ function parametrizeUrl(url, params) {
 function api(base, defaultOptions) {
 	const baseUrl = !base || /\/$/.test(base) ? base : base + '/';
 
-	const info = request('GET', 'info').then(res => ({
+	const info = request('GET', 'api/info').then(res => ({
 		indigoVersion: res['indigo_version'],
 		imagoVersions: res['imago_versions']
 	})).catch(() => {
@@ -89,10 +89,10 @@ function api(base, defaultOptions) {
 	return Object.assign(info, {
 		convert: indigoCall('POST', 'indigo/convert'),
 		layout: indigoCall('POST', 'indigo/layout'),
-		clean: APICall('POST', 'clean'),
-		aromatize: APICall('POST', 'aromatize'),
-		dearomatize: APICall('POST', 'dearomatize'),
-		calculateCip: APICall('POST', 'calculate_cip'),
+		clean: APICall('POST', 'api/clean'),
+		aromatize: APICall('POST', 'api/aromatize'),
+		dearomatize: APICall('POST', 'api/dearomatize'),
+		calculateCip: APICall('POST', 'api/calculate_cip'),
 		automap: indigoCall('POST', 'indigo/automap'),
 		check: indigoCall('POST', 'indigo/check'),
 		calculate: indigoCall('POST', 'indigo/calculate'),
