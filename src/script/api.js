@@ -39,7 +39,7 @@ function parametrizeUrl(url, params) {
 function api(base, defaultOptions) {
 	const baseUrl = !base || /\/$/.test(base) ? base : base + '/';
 
-	const info = request('GET', 'api/info').then(res => ({
+	const info = request('GET', 'info').then(res => ({
 		indigoVersion: res['indigo_version'],
 		imagoVersions: res['imago_versions']
 	})).catch(() => {
@@ -75,24 +75,13 @@ function api(base, defaultOptions) {
 		};
 	}
 
-	function APICall(method, url, defaultData) {
-		return (data, options) => {
-			const body = Object.assign({}, defaultData, data);
-			body.options = Object.assign(body.options || {},
-				defaultOptions, options);
-			return info.then(() => request(method, url, JSON.stringify(body), {
-				'Content-Type': 'application/json'
-			}));
-		};
-	}
-
 	return Object.assign(info, {
 		convert: indigoCall('POST', 'indigo/convert'),
 		layout: indigoCall('POST', 'indigo/layout'),
-		clean: APICall('POST', 'api/clean'),
-		aromatize: APICall('POST', 'api/aromatize'),
-		dearomatize: APICall('POST', 'api/dearomatize'),
-		calculateCip: APICall('POST', 'api/calculate_cip'),
+		clean: indigoCall('POST', 'indigo/clean'),
+		aromatize: indigoCall('POST', 'indigo/aromatize'),
+		dearomatize: indigoCall('POST', 'indigo/dearomatize'),
+		calculateCip: indigoCall('POST', 'indigo/calculate_cip'),
 		automap: indigoCall('POST', 'indigo/automap'),
 		check: indigoCall('POST', 'indigo/check'),
 		calculate: indigoCall('POST', 'indigo/calculate'),

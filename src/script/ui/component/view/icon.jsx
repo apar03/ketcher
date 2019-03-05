@@ -19,7 +19,7 @@ import { h } from 'preact';
 function Icon({ name, ...props }) {
 	return (
 		<svg {...props}>
-			<use xlinkHref={`ketcher.svg#icon-${name}`} />
+			<use xlinkHref={`#icon-${name}`} />
 		</svg>
 	);
 }
