@@ -28,10 +28,8 @@ def runOnMolecule(function):
 
 
 def cleanUp(molecule):
-    rdDepictor.SetPreferCoordGen(True)
+    rdDepictor.SetPreferCoordGen(False)
     rdDepictor.Compute2DCoords(molecule)
-
-
 
 @app.route('/info', methods=['GET'])
 def info():
