@@ -14,7 +14,7 @@
  * limitations under the License.
  ***************************************************************************/
 
-import { serverTransform, serverCIP } from '../state/server';
+import { serverTransform } from '../state/server';
 
 export default {
 	layout: {
@@ -22,14 +22,6 @@ export default {
 		title: 'Layout',
 		action: {
 			thunk: serverTransform('layout')
-		},
-		disabled: (editor, server, options) => !options.app.server
-	},
-	cip: {
-		shortcut: 'Mod+p',
-		title: 'Calculate CIP',
-		action: {
-			thunk: serverCIP()
 		},
 		disabled: (editor, server, options) => !options.app.server
 	},
@@ -52,5 +44,5 @@ export default {
 		title: '3D Viewer',
 		action: { dialog: 'miew' },
 		disabled: () => !window.Miew
-	},
+	}
 };
