@@ -25,14 +25,6 @@ export default {
 		},
 		disabled: (editor, server, options) => !options.app.server
 	},
-	cip: {
-		shortcut: 'Mod+p',
-		title: 'Calculate CIP',
-		action: {
-			thunk: serverTransform('calculateCip')
-		},
-		disabled: (editor, server, options) => !options.app.server
-	},
 	check: {
 		title: 'Check Structure',
 		action: { dialog: 'check' },
@@ -52,5 +44,5 @@ export default {
 		title: '3D Viewer',
 		action: { dialog: 'miew' },
 		disabled: () => !window.Miew
-	},
+	}
 };

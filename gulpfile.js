@@ -95,7 +95,7 @@ gulp.task('copy', ['logo'], getTask('./gulp/assets', {
 	expName: 'copy',
 	dist: options.dist,
 	'miew-path': options['miew-path'],
-	distrib: ['LICENSE', 'src/template/demo.html', 'src/tmpl_data/library.sdf', 'src/tmpl_data/library.svg']
+	distrib: ['LICENSE', 'src/template/demo.html', 'src/tmpl_data/library.sdf', 'src/tmpl_data/library.svg', 'src/script/RDKit_minimal.js', 'src/script/RDKit_minimal.wasm']
 }));
 
 /*== version ==*/

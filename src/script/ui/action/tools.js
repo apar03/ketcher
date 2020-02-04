@@ -112,11 +112,7 @@ const toolActions = {
 		shortcut: 'Mod+r',
 		title: 'Attachment Point Tool',
 		action: { tool: 'apoint' }
-	},
-	chain2: {
-		title: 'Chain2',
-		action: { tool: 'chain' }
-	},
+	}
 };
 
 const bondCuts = {
