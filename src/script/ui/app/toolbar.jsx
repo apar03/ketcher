@@ -126,7 +126,6 @@ const toolbox = [
 		]
 	},
 	'chain',
-	'chain2',
 	{
 		id: 'charge',
 		menu: [
