@@ -90,8 +90,6 @@ function api(base, defaultOptions) {
 		convert: indigoCall('POST', 'indigo/convert'),
 		layout: indigoCall('POST', 'indigo/layout'),
 		clean: APICall('POST', 'api/clean'),
-		aromatize: APICall('POST', 'api/aromatize'),
-		dearomatize: APICall('POST', 'api/dearomatize'),
 		calculateCip: APICall('POST', 'api/calculate_cip'),
 		automap: indigoCall('POST', 'indigo/automap'),
 		check: indigoCall('POST', 'indigo/check'),
