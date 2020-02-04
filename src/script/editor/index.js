@@ -82,6 +82,16 @@ Editor.prototype.struct = function (value) {
 	return this.render.ctab.molecule;
 };
 
+Editor.prototype.struct2 = function (value) {
+	if (arguments.length > 0) {
+		this.selection(null);
+		this.update(fromNewCanvas(this.render.ctab,
+			value || new Struct()));
+		recoordinate(this, getStructCenter(this.render.ctab));
+	}
+	return this.render.ctab.molecule;
+};
+
 Editor.prototype.options = function (value) {
 	if (arguments.length > 0) {
 		var struct = this.render.ctab.molecule;

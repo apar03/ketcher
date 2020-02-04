@@ -116,7 +116,6 @@ export function serverTransform(method, data, struct) {
 		const state = getState();
 		const opts = state.options.getServerSettings();
 		opts.data = data;
-
 		serverCall(state.editor, state.server, method, opts, struct)
 			.then(res => dispatch(load(res.struct, {
 				rescale: method === 'layout',
